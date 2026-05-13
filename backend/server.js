@@ -19,12 +19,18 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes de test
 app.get('/', (req, res) => {
-  res.json({ message: 'API!' });
+  res.json({ message: 'api running for voice app' });
 });
 
 // Routes
 // const userRoutes = require('./routes/userRoutes');
+const authRoutes = require('./routes/authRoutes');
+
 // app.use('/api/users', userRoutes);
+app.use('/api/auth', authRoutes);
+
+
+
 
 // Gestion des erreurs
 app.use((err, req, res, next) => {
